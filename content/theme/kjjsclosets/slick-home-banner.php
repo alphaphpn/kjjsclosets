@@ -57,18 +57,7 @@
 				$bimgloc = 'pexels-photo-326311.jpeg';
 
 				?>
-					<div class="card">
-						<div class="<?php echo $contentwidth; ?> card-img-overlay d-flex h-100 justify-content-left align-items-center">
-							<div class="text-left mr-auto w-100" style="max-width: 550px;">
-								<h2 class="card-title"><?php echo $bheadtitle; ?></h2>
-								<h4 class="card-title"><?php echo $bheadtitle2; ?></h4>
-								<p class="card-text"><?php echo $bsubtext; ?></p>
-								<a href="#" class="btn btn-warning">Read more</a>
-								<a href="#" class="btn btn-primary">Call now</a>
-							</div>
-						</div>
-						<img class="card-img-top vh-100" src="<?php echo $domainhome; ?>storage/img/img-transparent-banner-1024x438.png" alt="Card image" style="background-image: url(<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$bimgloc; ?>);">
-					</div>
+					
 				<?php
 					// Center = text-center mr-auto ml-auto
 					// Left = text-left mr-auto
