@@ -47,7 +47,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12 form-group">
-							<input type="submit" name="btnSend" value="Send" class="<?php echo 'btn '.$buttonsize.' pull-right w-100'; ?>" style="<?php echo 'background-color: '.$primarycolor.';'; ?>">
+							<input type="submit" name="btnSend" value="Send" class="<?php echo 'btn '.$buttonsize.' pull-right w-100 text-light'; ?>" style="<?php echo 'background-color: '.$primarycolor.';'; ?>">
 						</div>
 					</div>
 					<div class="form-group">

@@ -46,25 +46,17 @@
 									?>
 								</div>
 							</div>
-							<img class="card-img-top vh-100" src="<?php echo $domainhome; ?>storage/img/img-transparent-banner-1024x438.png" alt="Card image" style="background-image: url(<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$bimgloc; ?>);">
+							<img class="card-img-top vh-100" src="<?php echo $domainhome; ?>storage/img/img-transparent-banner-1024x438.png" style="background-image: url(<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$bimgloc; ?>);">
 						</div>
 					<?php
 				}
 			} else {
-				$bheadtitle = 'Lorem ipsum';
-				$bheadtitle2 = 'Ut enim ad minima veniam, quis nostrum exercitationem.';
-				$bsubtext = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.';
-				$bimgloc = 'pexels-photo-326311.jpeg';
+				// Center = text-center mr-auto ml-auto
+				// Left = text-left mr-auto
+				// Right = text-right ml-auto
 
-				?>
-					
-				<?php
-					// Center = text-center mr-auto ml-auto
-					// Left = text-left mr-auto
-					// Right = text-right ml-auto
-
-					// Full-width = w-100
-					// Half-width = w-100 mxw-half
+				// Full-width = w-100
+				// Half-width = w-100 mxw-half
 			}
 		} catch (PDOException $error) {
 			die('ERROR: ' . $exception->getMessage());

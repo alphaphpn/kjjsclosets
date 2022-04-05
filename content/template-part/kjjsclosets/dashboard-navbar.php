@@ -117,7 +117,7 @@
 									<?php
 								}
 							?>
-							<li>
+							<li class="d-none">
 								<a href="<?php echo $baklnk; ?>routes/user/profile">Profile</a>
 							</li>
 						</ul>
@@ -148,7 +148,7 @@
 									<li>
 										<a href="#" class="d-none">Privacy</a>
 									</li>
-									<li>
+									<li class="d-none">
 										<a href="<?php echo $baklnk; ?>routes/address" title="Address List">Address</a>
 									</li>
 								</ul>

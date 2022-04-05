@@ -1,14 +1,10 @@
 <?php
-	include_once "../../content/template-part/".$themename."/partner-navbar.php";
-	if(empty($_SESSION["usercode"])) {
-		$usercodenow = null;
-		session_start();
-		session_destroy();
-		header("location:".$domainhome);
-	} else {
-		$usercodenow = $_SESSION["usercode"];
-		echo $_SESSION["fullname"];
-	}
+	include_once "../../content/template-part/".$themename."/dashboard-navbar.php";
+	include_once "../../inc/core.php";
+	include_once "../../inc/srvr.php";
+	$cnn = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
 ?>
 
-<h1>Audit Report</h1>
+<main class="page-content">
+	<div class="container-fluid"></div>
+</main>

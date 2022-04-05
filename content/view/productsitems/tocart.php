@@ -63,7 +63,7 @@
 						$fqty9 = $row9['qty'];		
 						$fqty9plus = $fqty8+$fqty9;
 						$totalamt9 = $fqty9plus*$sellprice8;
-						$cstock9 = $nqty01;
+						$cstock9 = $row9['cstock'];
 					}
 
 					if ($fqty9plus>$cstock9) {
@@ -75,6 +75,7 @@
 							item_order_id	= '$itemorderid9'
 							";
 						$cnn->exec($qry10);
+						echo '<script>alert("Already exceed on available stock! '.$cstock9.'available."); window.open("../../../routes/productsitems/","_self");</script>';
 					} else {
 						$qry10 = "UPDATE tbl_order_item SET 
 							qty			= '$fqty9plus', 
@@ -84,8 +85,8 @@
 							item_order_id	= '$itemorderid9'
 							";
 						$cnn->exec($qry10);
+						echo '<script>alert("You have added quantity of '.$fqty8.' and a total quantity '.$fqty9plus.'"); window.open("../../../routes/productsitems/","_self");</script>';
 					}
-					echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
 				} else {
 					$qry11 = "INSERT INTO tbl_order_item SET 
 						order_id	= '$orderid9', 
@@ -97,13 +98,13 @@
 						price		= '$sellprice8', 
 						total_amt	= '$totalamt8', 
 						extnem		= '$extnem8', 
-						cstock		= '$nqty01'
+						cstock		= '$actualqty'
 						";
 					$cnn->exec($qry11);
-					echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+					echo '<script>alert("You have added new item to your cart"); window.open("../../../routes/productsitems/","_self");</script>';
 				}
 			} else {
-				echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+				echo '<script>alert("No available item."); window.open("../../../routes/productsitems/","_self");</script>';
 			}
 		} else {
 			$qryGetCUser = "SELECT * FROM tblsysuser WHERE usercode=:idcustomer45 LIMIT 1";
@@ -124,39 +125,41 @@
 					$receiveremail3 = $rowGetCUser["uemail"];
 					$receiveraddress3 = $rowGetCUser["address"] ? $rowGetCUser["address"] : header("location:../../../routes/mpurchase");
 				}
+
+				$qry3 = "INSERT INTO tbl_order_customer SET 
+					customer_id=:idcustomer3, 
+					customer_name=:clientname, 
+					phone=:clientphone, 
+					cemail=:clientemail, 
+					address=:clientaddress3, 
+					receiver=:receivername, 
+					receiver_phone=:receiverphone, 
+					remail=:receiveremail, 
+					d_location=:receiveraddress3, 
+					remarks=:remarkx3, 
+					status=:statuz3, 
+					deleted=0
+				";
+
+				$stmt3 = $cnn->prepare($qry3);
+				$idcustomer3 = $idcustomer45;
+				$remarkx3 = 'Process';
+				$statuz3 = 'Unpaid';
+				$stmt3->bindParam(':idcustomer3', $idcustomer3);
+				$stmt3->bindParam(':remarkx3', $remarkx3);
+				$stmt3->bindParam(':statuz3', $statuz3);
+				$stmt3->bindParam(':clientname', $clientname3);
+				$stmt3->bindParam(':clientphone', $clientphone3);
+				$stmt3->bindParam(':clientemail', $clientemail3);
+				$stmt3->bindParam(':clientaddress3', $clientaddress3);
+				$stmt3->bindParam(':receivername', $receivername3);
+				$stmt3->bindParam(':receiverphone', $receiverphone3);
+				$stmt3->bindParam(':receiveremail', $receiveremail3);
+				$stmt3->bindParam(':receiveraddress3', $receiveraddress3);
+				$stmt3->execute();
+
+				echo '<script>alert("Added new transaction."); window.open("../../../routes/productsitems/","_self");</script>';
 			}
-
-			$qry3 = "INSERT INTO tbl_order_customer SET 
-				customer_id=:idcustomer3, 
-				customer_name=:clientname, 
-				phone=:clientphone, 
-				cemail=:clientemail, 
-				address=:clientaddress3, 
-				receiver=:receivername, 
-				receiver_phone=:receiverphone, 
-				remail=:receiveremail, 
-				d_location=:receiveraddress3, 
-				remarks=:remarkx3, 
-				status=:statuz3, 
-				deleted=0
-			";
-
-			$stmt3 = $cnn->prepare($qry3);
-			$idcustomer3 = $idcustomer45;
-			$remarkx3 = 'Process';
-			$statuz3 = 'Unpaid';
-			$stmt3->bindParam(':idcustomer3', $idcustomer3);
-			$stmt3->bindParam(':remarkx3', $remarkx3);
-			$stmt3->bindParam(':statuz3', $statuz3);
-			$stmt3->bindParam(':clientname', $clientname3);
-			$stmt3->bindParam(':clientphone', $clientphone3);
-			$stmt3->bindParam(':clientemail', $clientemail3);
-			$stmt3->bindParam(':clientaddress3', $clientaddress3);
-			$stmt3->bindParam(':receivername', $receivername3);
-			$stmt3->bindParam(':receiverphone', $receiverphone3);
-			$stmt3->bindParam(':receiveremail', $receiveremail3);
-			$stmt3->bindParam(':receiveraddress3', $receiveraddress3);
-			$stmt3->execute();
 
 			$qry7 = "SELECT * FROM tbl_order_customer WHERE customer_id=:idcustomer7 AND remarks=:remarkx7 AND status=:statuz7 AND deleted=0 ORDER BY order_id DESC LIMIT 1";
 			$stmt7 = $cnn->prepare($qry7);
@@ -216,14 +219,14 @@
 						cstock		= '$cstock6'
 						";
 					$cnn->exec($qry5);
-					echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+					// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
 				} else {
-					echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+					// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
 				}
 			} else {
-				echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+				// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
 			}
-			echo '<script>window.open("../../../routes/productsitems/","_self");</script>';	
+			// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';	
 		}
 	} catch (PDOException $exception) {
 		die('ERROR: ' . $exception->getMessage());

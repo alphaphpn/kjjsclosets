@@ -13,8 +13,7 @@
 		$stmt_remx->bindParam(':ordrcridx', $ordrcridx);
 		$stmt_remx->bindParam(':order_remzx', $order_remzx);
 		if ($stmt_remx->execute()) {
-			echo "<script>alert('Successfully checkout. OrderID:[".$chidx."] Kindly monitor your email/phone for instruction of the payment or you may reach thru this number ".$mobileno.". Thank you');window.location=('../../../routes/mpurchase');</script>";
-			// header('Location:../../../routes/mpurchase');
+			echo "<script>alert('Successfully checkout. OrderID:[".$chidx."] Kindly monitor your email/phone for instruction of the payment. Thank you');window.location=('../../../routes/mpurchase');</script>";
 		} else {
 			echo "<script>alert('Unable to checkout record. OrderID:[".$chidx."]');</script>";
 			die('Unable to checkout record.');

@@ -50,10 +50,10 @@
 							<li>
 								<a href="<?php echo $baklnk; ?>routes/item-order">Order(s)</a>
 							</li>
-							<li>
+							<li class="d-none">
 								<a href="<?php echo $baklnk; ?>routes/item">Complete</a>
 							</li>
-							<li>
+							<li class="d-none">
 								<a href="#" data-toggle="modal" data-target="#mPayMode">Pay</a>
 							</li>
 							<li>
@@ -74,7 +74,7 @@
 							<?php
 								if ($_SESSION["ulevpos"]==1) {
 									?>
-									<li>
+									<li class="d-none">
 										<a href="#">User(s)</a>
 									</li>
 									<?php
@@ -84,9 +84,9 @@
 								<a href="#" title="d-none">Sales</a>
 								<div class="sidebar-dropdown">
 									<ul>
-										<li><a href="#">Daily</a></li>
-										<li><a href="#">Monthly</a></li>
-										<li><a href="#">Yearly</a></li>
+										<li><a href="<?php echo $baklnk; ?>routes/reports/daily">Daily</a></li>
+										<li><a href="<?php echo $baklnk; ?>routes/reports/monthly">Monthly</a></li>
+										<li><a href="<?php echo $baklnk; ?>routes/reports/yearly">Yearly</a></li>
 									</ul>
 								</div>
 							</li>

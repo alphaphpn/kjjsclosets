@@ -42,7 +42,6 @@
 	<div class="container-fluid">
 		<h4><?php echo $page_title; ?></h4>
 		<form method="post" class="needs-validation" novalidate>
-			
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="input-group mb-3 input-group-sm">

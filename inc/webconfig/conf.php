@@ -8,7 +8,12 @@
 		if ($chckfle1) {
 			include_once "../../inc/srvr.php";
 		} else {
-			include_once "../../../inc/srvr.php";
+			$chckfle2 = file_exists("../../../inc/srvr.php");
+			if ($chckfle2) {
+				include_once "../../../inc/srvr.php";
+			} else {
+				include_once "../../../../inc/srvr.php";
+			}
 		}
 	}
 
@@ -52,6 +57,7 @@
 		$eightcolor = $row_webconf['eight_color'];
 		$ninghtcolor = $row_webconf['ninght_color'];
 		$tenthcolor = $row_webconf['tenth_color'];
+		$menugradientcolor = $row_webconf['menu_gradient_color'];
 		$buttonsize = $row_webconf['button_size'];
 		$contentwidth = $row_webconf['content_width'];
 

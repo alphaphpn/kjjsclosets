@@ -6,7 +6,7 @@ $(document).ready(function(){
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: false,
-		autoplaySpeed: 10000,
+		autoplaySpeed: 2000,
 		arrows: true,
 		dots: true
 	});
@@ -16,7 +16,7 @@ $(document).ready(function(){
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		autoplay: false,
-		autoplaySpeed: 10000,
+		autoplaySpeed: 2000,
 		arrows: false,
 		responsive: [
 			{

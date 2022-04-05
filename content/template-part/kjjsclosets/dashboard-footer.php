@@ -3,7 +3,12 @@
 	if ($chckfledashf) {
 		$dirbakf = "../../";
 	} else {
-		$dirbakf = "../../../";
+		$chckfledashf1 = file_exists("../../../assets/css/style.css");
+		if ($chckfledashf1) {
+			$dirbakf = "../../../";
+		} else {
+			$dirbakf = "../../../../";
+		}
 	}
 ?>
 

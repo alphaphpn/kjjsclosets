@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2022 at 07:25 PM
+-- Generation Time: Apr 06, 2022 at 01:44 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -58,6 +58,7 @@ CREATE TABLE `conf` (
   `eight_color` varchar(254) NOT NULL,
   `ninght_color` varchar(254) NOT NULL,
   `tenth_color` varchar(254) NOT NULL,
+  `menu_gradient_color` varchar(254) NOT NULL,
   `geo_map` text NOT NULL,
   `build_by` varchar(254) NOT NULL,
   `cwebzite` varchar(254) NOT NULL,
@@ -72,8 +73,8 @@ CREATE TABLE `conf` (
 -- Dumping data for table `conf`
 --
 
-INSERT INTO `conf` (`id`, `cmpny_name`, `sys_name`, `sys_ver`, `sys_logo`, `navbar_logo`, `favicon`, `quote_title`, `ceo_pres`, `memail`, `facebook`, `telno`, `mobileno`, `maddress`, `idletime`, `themename`, `domainhome`, `fontglobal`, `datetoday`, `created`, `primary_color`, `second_color`, `third_color`, `forth_color`, `fifth_color`, `sixth_color`, `seventh_color`, `eight_color`, `ninght_color`, `tenth_color`, `geo_map`, `build_by`, `cwebzite`, `dcurrencyx`, `nav_bar_orrient`, `modified`, `button_size`, `content_width`) VALUES
-(1, 'KJJ\'s Closets', 'KJJ\'s Closets', '1.0.0', 'logo.png', 'logo-white.png', 'logo.png', 'Bring the customers closer to their dream fashion.', 'Katherine Baay', 'kjjscloset@gmail.com', 'facebook.com/kjjscloset', '+323332469', '+639678407618', 'Libertad, Tungawan, Zamboanga Sibugay, PH 07018', 20, 'kjjsclosets', '/alphaphpn.com/staging/kjjsclosets/', '', '20220403', '2021-11-03 21:09:34', '#ff0000', 'rgba(255,0,0,0.1)', '#960d0d', 'rgba(0,0,0,0.2)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', '7.6010913,122.4230158', 'Joseph Drillon, Kimmer Edombingo, Jeza Daguinutas, Rey-An Colot, Apilar Barcelisa', 'kjjsclosets.com', '&#8369;', 'fixed-top', '2022-04-03 17:06:07', 'btn-lg', 'container-fluid');
+INSERT INTO `conf` (`id`, `cmpny_name`, `sys_name`, `sys_ver`, `sys_logo`, `navbar_logo`, `favicon`, `quote_title`, `ceo_pres`, `memail`, `facebook`, `telno`, `mobileno`, `maddress`, `idletime`, `themename`, `domainhome`, `fontglobal`, `datetoday`, `created`, `primary_color`, `second_color`, `third_color`, `forth_color`, `fifth_color`, `sixth_color`, `seventh_color`, `eight_color`, `ninght_color`, `tenth_color`, `menu_gradient_color`, `geo_map`, `build_by`, `cwebzite`, `dcurrencyx`, `nav_bar_orrient`, `modified`, `button_size`, `content_width`) VALUES
+(1, 'KJJ\'s Closets', 'KJJ\'s Closets', '1.0.0', 'logo.png', 'logo-white.png', 'logo.png', 'Bring the customers closer to their dream fashion.', 'Katherine Baay', 'kjjscloset@gmail.com', 'facebook.com/kjjsclosets', '+323332469', '+639678407618', 'Libertad, Tungawan, Zamboanga Sibugay, PH 07018', 20, 'kjjsclosets', '/alphaphpn.com/staging/kjjsclosets/', '', '20220403', '2021-11-03 21:09:34', '#ff0000', 'rgba(242,130,130,0.1)', '#960d0d', 'rgba(0,0,0,0.2)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', '', '7.6010913,122.4230158', 'Joseph Drilon, Jeza Daguinutas, Rey-An Colot, Apilar Barcelisa', 'kjjsclosets.com', '&#8369;', 'fixed-top', '2022-04-05 23:41:42', 'btn-lg', 'container-fluid');
 
 -- --------------------------------------------------------
 
@@ -122,9 +123,8 @@ CREATE TABLE `tblitem` (
 --
 
 INSERT INTO `tblitem` (`item_id`, `barcode`, `name`, `description`, `category`, `unit`, `sell_price`, `sale_price`, `supplier_price`, `stock_available`, `size`, `color`, `quality`, `status`, `extnem`, `created`, `modified`, `deletedx`) VALUES
-(1, '', 'Victoria\'s Secret', '', 'Perfume', 'pc', 280, 0, 0, 40, '150ml', '', '', 0, 'jpg', '2022-04-04 01:20:46', '2022-04-03 17:20:46', 0),
-(2, '', 'Pink Body Mist', '', 'Perfume', 'pc', 80, 0, 0, 60, '100ml', '', '', 0, 'jpg', '2022-04-04 01:21:35', '2022-04-03 17:21:35', 0),
-(3, '', 'Nike Sock', '', 'Footware', 'pair', 50, 0, 0, 100, 'Medium', '', '', 0, 'jpg', '2022-04-04 01:22:20', '2022-04-03 17:22:20', 0);
+(1, '', 'Dress', '', 'Womens Apparel', 'pc', 280, 0, 0, 90, 'Medium', '', '', 0, 'jpg', '2022-04-05 09:48:38', '2022-04-05 01:48:38', 0),
+(2, '', 'Huda Liquid Matte', '', 'Beauty Product', 'pc', 180, 0, 0, 20, 'Small', '', '', 0, 'jpg', '2022-04-05 10:35:00', '2022-04-05 02:35:00', 0);
 
 -- --------------------------------------------------------
 
@@ -167,8 +167,8 @@ CREATE TABLE `tblsysuser` (
 --
 
 INSERT INTO `tblsysuser` (`usercode`, `username`, `passcode`, `pin`, `extname`, `img_url`, `fullname`, `uemail`, `umobileno`, `xposition`, `secquest`, `secans`, `ulevpos`, `uonline`, `ustatz`, `createdby`, `lname`, `fname`, `mname`, `address`, `deletedx`, `testimony`, `cmpny`, `cmpny_position`, `gogfirstime`, `created`, `modified`) VALUES
-('00000000000', 'admin', '21232f297a57a5a743894a0e4a801fc3', '123456', '', 'https://lh3.googleusercontent.com/a/AATXAJySoJIRP_pIVIlqG7sRV53ZP97u1QcDOl1gIz_a=s96-c', 'Admin A. Minad', 'admin@info.com', '1', 'Administrator', 'What is your the name of your favorite dog?', 'you', 1, 0, 1, '00000000000', 'Admin', 'Admin', 'Admin', '', 0, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.', 'Lorem ipsum', 'CEO', 0, '2021-12-06 00:12:35', '2022-04-03 17:10:53'),
-('111176140783446179165', 'kjjscloset', '73df29f22ffb25b9a213b419e7c9294a', '271968', '', 'https://lh3.googleusercontent.com/a-/AOh14GgEMSTLGOQjKdapJYlz6fuhGWCqLM2KQKj_HxcH=s96-c', 'Baay Katherine', 'kjjscloset@gmail.com', '09678407618', 'Customer', 'What is the name of your favorite pet?', 'dog', 6, 0, 1, '', 'Katherine', 'Baay', '', 'Pob., R.T. Lim, Zamboanga Sibugay', 0, '', '', '', 1, '2022-04-04 01:14:24', '2022-04-03 17:18:26'),
+('00000000000', 'admin', '21232f297a57a5a743894a0e4a801fc3', '123456', '', 'https://lh3.googleusercontent.com/a/AATXAJySoJIRP_pIVIlqG7sRV53ZP97u1QcDOl1gIz_a=s96-c', 'Admin A. Minad', 'admin@info.com', '1', 'Administrator', 'What is your the name of your favorite dog?', 'you', 1, 0, 1, '00000000000', 'Admin', 'Admin', 'Admin', '', 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'The Company', 'Position', 0, '2021-12-06 00:12:35', '2022-04-05 21:57:41'),
+('117000830823875168641', 'devusayrshire', '5f4dcc3b5aa765d61d8327deb882cf99', '267593', 'jpg', 'content/theme/default/storage/img/profile/USER117000830823875168641.jpg', 'Usayr Shire', 'devusayrshire@gmail.com', '09154826025', 'Customer', 'What is the name of your favorite pet?', 'dog', 6, 0, 1, '', 'Shire', 'Usayr', '', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 0, '', '', '', 0, '2022-04-02 16:15:02', '2022-04-02 23:37:41'),
 ('202204030001', 'cashier', '6ac2470ed8ccf204fd5ff89b32a355cf', '095324', '', '', 'Cashier C. Cashier', 'cashier@gmail.com', '12345678910', 'Cashier', 'What is the name of your favorite pet?', 'dog', 3, 0, 1, '', 'Cashier', 'Cashier', 'Cashier', 'Pob., Tungawan', 0, '', '', '', 0, '2022-04-04 00:00:51', '2022-04-03 16:04:13');
 
 -- --------------------------------------------------------
@@ -545,9 +545,9 @@ CREATE TABLE `tbl_headbanner` (
 --
 
 INSERT INTO `tbl_headbanner` (`hb_id`, `head_title`, `head_title2`, `sub_text`, `img_loc`, `banner_width`, `content_alignment`) VALUES
-(1, 'Lorem ipsum', 'Ut enim ad minima veniam, quis nostrum exercitationem.', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.', 'pexels-photo-291762.webp', 'w-100 mxw-half', 'text-left mr-auto'),
-(2, 'Sed ut perspiciatis', 'Duis aute irure dolor in reprehenderit', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.', 'pexels-photo-3769747.webp', 'w-100 mxw-half', 'text-right ml-auto'),
-(3, 'At vero eos et accusamus', 'Itaque earum rerum hic tenetur a sapiente delectus', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.', 'pexels-photo-297933.jpeg', 'w-100 mxw-half', 'text-center mr-auto ml-auto');
+(1, NULL, '', NULL, 'Picture1.jpg', '', ''),
+(2, NULL, '', NULL, 'pexels-photo-291762.webp', '', ''),
+(3, NULL, '', NULL, 'pexels-photo-3769747.webp', '', '');
 
 -- --------------------------------------------------------
 
@@ -565,14 +565,6 @@ CREATE TABLE `tbl_headbanner_btn` (
   `tool_tip` text NOT NULL,
   `open_in` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_headbanner_btn`
---
-
-INSERT INTO `tbl_headbanner_btn` (`hbtn_id`, `hb_id`, `caption`, `btn_class`, `link_url`, `alt`, `tool_tip`, `open_in`) VALUES
-(1, 1, 'Read more', 'btn-warning', '#', 'Read more', 'Read more', ''),
-(2, 1, 'Call now', 'btn-primary', '#', 'Call now', 'Call now', '');
 
 -- --------------------------------------------------------
 
@@ -642,8 +634,9 @@ CREATE TABLE `tbl_order_customer` (
 --
 
 INSERT INTO `tbl_order_customer` (`order_id`, `receipt_no`, `customer_id`, `customer_name`, `phone`, `cemail`, `address`, `sub_total_qty`, `sub_total_item`, `sub_total`, `shipping_fee`, `total_all`, `remarks`, `status`, `process_by`, `review_by`, `approved_by`, `receiver`, `receiver_phone`, `remail`, `d_location`, `long_lat`, `courier`, `otherinfo`, `created`, `modified`, `deleted`) VALUES
-(1, NULL, '111176140783446179165', 'Baay Katherine', '09678407618', 'kjjscloset@gmail.com', 'Pob., R.T. Lim, Zamboanga Sibugay', 11, 2, 850, NULL, NULL, 'Shipped', 'Unpaid', NULL, NULL, NULL, 'Baay Katherine', '09678407618', 'kjjscloset@gmail.com', 'Pob., R.T. Lim, Zamboanga Sibugay', '', '', '', '2022-04-04 01:22:57', '2022-04-03 17:24:30', 0),
-(2, NULL, '111176140783446179165', 'Baay Katherine', '09678407618', 'kjjscloset@gmail.com', 'Pob., R.T. Lim, Zamboanga Sibugay', NULL, NULL, NULL, NULL, NULL, 'Process', 'Unpaid', NULL, NULL, NULL, 'Baay Katherine', '09678407618', 'kjjscloset@gmail.com', 'Pob., R.T. Lim, Zamboanga Sibugay', '', '', '', '2022-04-04 01:23:39', '2022-04-03 17:23:39', 0);
+(1, 'OR202204051', '117000830823875168641', 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 180, NULL, NULL, 'Checkout', 'Paid', NULL, NULL, NULL, 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', '2022-04-04 14:05:27', '2022-04-05 06:15:05', 0),
+(2, 'OR202204052', '117000830823875168641', 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 3, 2, 740, NULL, NULL, 'Checkout', 'Paid', NULL, NULL, NULL, 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', '2022-04-05 14:10:19', '2022-04-05 06:13:42', 0),
+(3, 'OR202204053', '117000830823875168641', 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 20, 2, 4, NULL, NULL, 'Checkout', 'Paid', NULL, NULL, NULL, 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', '2022-04-05 14:11:30', '2022-04-05 06:13:55', 0);
 
 -- --------------------------------------------------------
 
@@ -674,9 +667,11 @@ CREATE TABLE `tbl_order_item` (
 --
 
 INSERT INTO `tbl_order_item` (`item_order_id`, `order_id`, `item_id`, `barcode`, `item_name`, `qty`, `unit`, `price`, `total_amt`, `extnem`, `cstock`, `status`, `modified`, `created`, `deleted`) VALUES
-(1, 1, 3, '', 'Nike Sock', 1, 'pair', 50, 50, 'jpg', 100, NULL, '2022-04-04 01:22:57', '2022-04-04 01:22:57', 0),
-(2, 1, 2, '', 'Pink Body Mist', 10, 'pc', 80, 800, 'jpg', 10, NULL, '2022-04-04 01:23:08', '2022-04-04 01:23:08', 0),
-(3, 2, 3, '', 'Nike Sock', 50, 'pair', 50, 2500, 'jpg', 50, NULL, '2022-04-04 01:23:48', '2022-04-04 01:23:48', 0);
+(1, 1, 2, '', 'Huda Liquid Matte', 1, 'pc', 180, 180, 'jpg', 20, NULL, '2022-04-05 14:05:27', '2022-04-05 14:05:27', 0),
+(2, 2, 1, '', 'Dress', 2, 'pc', 280, 560, 'jpg', 90, NULL, '2022-04-05 14:10:41', '2022-04-05 14:10:20', 0),
+(3, 2, 2, '', 'Huda Liquid Matte', 1, 'pc', 180, 180, 'jpg', 20, NULL, '2022-04-05 14:10:53', '2022-04-05 14:10:53', 0),
+(4, 3, 2, '', 'Huda Liquid Matte', 10, 'pc', 180, 1800, 'jpg', 20, NULL, '2022-04-05 14:12:58', '2022-04-05 14:11:31', 0),
+(5, 3, 1, '', 'Dress', 10, 'pc', 280, 2800, 'jpg', 90, NULL, '2022-04-05 14:12:39', '2022-04-05 14:11:42', 0);
 
 -- --------------------------------------------------------
 
@@ -886,7 +881,7 @@ ALTER TABLE `tblcrud`
 -- AUTO_INCREMENT for table `tblitem`
 --
 ALTER TABLE `tblitem`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tblsysuser_address`
@@ -964,7 +959,7 @@ ALTER TABLE `tbl_headbanner`
 -- AUTO_INCREMENT for table `tbl_headbanner_btn`
 --
 ALTER TABLE `tbl_headbanner_btn`
-  MODIFY `hbtn_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `hbtn_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_menu_frontpage`
@@ -976,13 +971,13 @@ ALTER TABLE `tbl_menu_frontpage`
 -- AUTO_INCREMENT for table `tbl_order_customer`
 --
 ALTER TABLE `tbl_order_customer`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_item`
 --
 ALTER TABLE `tbl_order_item`
-  MODIFY `item_order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `item_order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_secquest`
